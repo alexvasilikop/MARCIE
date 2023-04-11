@@ -40,7 +40,8 @@ conda install -c bioconda gatk
 ## Formatting of input files
 The script takes as input a list of paired-end Illumina files representing different samples or libraries (e.g., see below `sample_1`, `sample_2`) and a genome assembly file in fasta 
 format. A directory path with all the reads' fastq files has to be provided as a command line argument to the bash script. Make sure the samples/libraries have the following naming format 
-in your reads' directory (replace `sample_1`, `sample_2` with your sample codes). The pipeline assumes gzipped fastq filesof the reads. If another format or naming is given the pipeline will fail. 
+in your reads' directory (replace `sample_1`, `sample_2` with your sample codes). The pipeline assumes gzipped fastq files of the Illumina reads. If another format or naming is used 
+the pipeline will fail. 
 
 Example 1:
 ```
