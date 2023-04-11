@@ -1,6 +1,6 @@
 ## MARCIE (Mapping, vARiant Calling and genotyping pIpEline)
 
-#Introduction
+# Introduction
 This is a simple pipeline written in BASH for performing reads mapping (Illumina paired-end reads) on a reference genome 
 and subsequent filtering of BAM alignment files, short germline variant calling and combined genotyping of several 
 samples (using GATK).
@@ -14,7 +14,7 @@ Specifically the steps are the following:
 6. Combining the GVCF files (CombineGVCFs)
 7. Genotyping the combined GVCF files (GenotypeGVCFs)
 
-#Requirements
+# Requirements
 1. BWA mapper
 2. GATK toolkit (for variant calling and subsequent genotyping)
 3. Sambamba tool for processing and filtering BAM files (sorting, mapping quality filtering)
@@ -52,7 +52,7 @@ Example 2:
 ´codeB.R1.fastq.gz´
 ´codeB.R2.fastq.gz´
 
-#Usage
+# Usage
 Provide the following inputs to the ´marcie.sh´ script with the following order (the order is important but the variable names might differ. You could also provide the paths to these 
 files as command line arguments to the script without assigning them to variables beforehand):
 
