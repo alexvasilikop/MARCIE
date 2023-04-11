@@ -1,6 +1,6 @@
-## MARCIE (Mapping, vARiant Calling and genotyping pIpEline)
+# MARCIE (Mapping, vARiant Calling and genotyping pIpEline)
 
-# Introduction
+## Introduction
 This is a simple pipeline written in BASH for performing reads mapping (Illumina paired-end reads) on a reference genome 
 and subsequent filtering of BAM alignment files, short germline variant calling and combined genotyping of several 
 samples (using GATK).
@@ -14,7 +14,7 @@ Specifically the steps are the following:
 6. Combining the GVCF files (CombineGVCFs)
 7. Genotyping the combined GVCF files (GenotypeGVCFs)
 
-# Requirements
+## Requirements
 1. BWA mapper
 2. GATK toolkit (for variant calling and subsequent genotyping)
 3. Sambamba tool for processing and filtering BAM files (sorting, mapping quality filtering)
@@ -35,7 +35,7 @@ run the pipeline while the environment is activated.
 ´conda install -c bioconda bwa´
 ´conda install -c bioconda gatk´
 
-#Formatting of input files
+## Formatting of input files
 The script takes as input a list of paired-end Illumina files representing different samples or libraries (e.g., see below ´sample_1´, ´sample_2´) and a genome assembly file in fasta 
 format. A directory path with all the reads' fastq files has to be provided as a command line argument to the bash script. Make sure the samples/libraries have the following naming format 
 in your reads' directory (replace ´sample_1´, ´sample_2´ with your sample codes). The pipeline assumes gzipped fastq filesof the reads. If another format or naming is given the pipeline will fail. 
@@ -52,7 +52,7 @@ Example 2:
 ´codeB.R1.fastq.gz´
 ´codeB.R2.fastq.gz´
 
-# Usage
+## Usage
 Provide the following inputs to the ´marcie.sh´ script with the following order (the order is important but the variable names might differ. You could also provide the paths to these 
 files as command line arguments to the script without assigning them to variables beforehand):
 
