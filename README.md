@@ -25,46 +25,46 @@ The script requires that all above software dependencies are on the path and per
 The easiest way to run the pipeline is to generate a conda environment, install all dependencies there and 
 run the pipeline while the environment is activated.
 
-´#create and activate env´
-´conda create -n mapping_varcall_genotype´
-´conda activate mapping_varcall_genotype´
-´#install requirements´
-´conda install -c bioconda sambamba´
-´conda install -c bioconda samtools´
-´conda install -c bioconda picard´
-´conda install -c bioconda bwa´
-´conda install -c bioconda gatk´
+`#create and activate env`
+`conda create -n mapping_varcall_genotype`
+`conda activate mapping_varcall_genotype`
+`#install requirements`
+`conda install -c bioconda sambamba`
+`conda install -c bioconda samtools`
+`conda install -c bioconda picard`
+`conda install -c bioconda bwa`
+`conda install -c bioconda gatk`
 
 ## Formatting of input files
-The script takes as input a list of paired-end Illumina files representing different samples or libraries (e.g., see below ´sample_1´, ´sample_2´) and a genome assembly file in fasta 
+The script takes as input a list of paired-end Illumina files representing different samples or libraries (e.g., see below `sample_1`, `sample_2`) and a genome assembly file in fasta 
 format. A directory path with all the reads' fastq files has to be provided as a command line argument to the bash script. Make sure the samples/libraries have the following naming format 
-in your reads' directory (replace ´sample_1´, ´sample_2´ with your sample codes). The pipeline assumes gzipped fastq filesof the reads. If another format or naming is given the pipeline will fail. 
+in your reads' directory (replace `sample_1`, `sample_2` with your sample codes). The pipeline assumes gzipped fastq filesof the reads. If another format or naming is given the pipeline will fail. 
 
 Example 1:
-´sample_1.R1.fastq.gz´
-´sample_1.R2.fastq.gz´
-´sample_2.R1.fastq.gz´
-´sample_2.R2.fastq.gz´
+`sample_1.R1.fastq.gz`
+`sample_1.R2.fastq.gz`
+`sample_2.R1.fastq.gz`
+`sample_2.R2.fastq.gz`
 
 Example 2:
-´codeA.R1.fastq.gz´
-´codeA.R2.fastq.gz´
-´codeB.R1.fastq.gz´
-´codeB.R2.fastq.gz´
+`codeA.R1.fastq.gz`
+`codeA.R2.fastq.gz`
+`codeB.R1.fastq.gz`
+`codeB.R2.fastq.gz`
 
 ## Usage
 Provide the following inputs to the ´marcie.sh´ script with the following order (the order is important but the variable names might differ. You could also provide the paths to these 
 files as command line arguments to the script without assigning them to variables beforehand):
 
 Example:
-´genome=example_genome.fasta´
-´READS_DIR=/home/user/reads´
-´SPECIES=species_sp´
-´THREADS=10´
-´#threshold for filtering out low quality mappings´
-´MQ=10´
-´run pipeline´
-´./marcie.sh $genome $READS_DIR $SPECIES $THREADS $MQ´
+`genome=example_genome.fasta`
+`READS_DIR=/home/user/reads`
+`SPECIES=species_sp`
+`THREADS=10`
+`#threshold for filtering out low quality mappings`
+`MQ=10`
+`#run pipeline`
+`./marcie.sh $genome $READS_DIR $SPECIES $THREADS $MQ`
 
 The species name variable is important as it will be the prefix of all your output files.
 
