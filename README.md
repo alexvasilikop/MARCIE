@@ -25,8 +25,8 @@ The script requires that all above software dependencies are on the path and per
 The easiest way to run the pipeline is to generate a conda environment, install all dependencies there and 
 run the pipeline while the environment is activated.
 
-`#create and activate env\n
-conda create -n mapping_varcall_genotype\n
+`#create and activate env<\n>
+conda create -n mapping_varcall_genotype<\n>
 conda activate mapping_varcall_genotype
 #install requirements
 conda install -c bioconda sambamba
