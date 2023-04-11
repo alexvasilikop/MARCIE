@@ -43,30 +43,37 @@ format. A directory path with all the reads' fastq files has to be provided as a
 in your reads' directory (replace `sample_1`, `sample_2` with your sample codes). The pipeline assumes gzipped fastq filesof the reads. If another format or naming is given the pipeline will fail. 
 
 Example 1:
-`sample_1.R1.fastq.gz`
-`sample_1.R2.fastq.gz`
-`sample_2.R1.fastq.gz`
-`sample_2.R2.fastq.gz`
+```
+sample_1.R1.fastq.gz
+sample_1.R2.fastq.gz
+sample_2.R1.fastq.gz
+sample_2.R2.fastq.gz
+```
 
 Example 2:
-`codeA.R1.fastq.gz`
-`codeA.R2.fastq.gz`
-`codeB.R1.fastq.gz`
-`codeB.R2.fastq.gz`
-
+```
+codeA.R1.fastq.gz
+codeA.R2.fastq.gz
+codeB.R1.fastq.gz
+codeB.R2.fastq.gz
+```
 ## Usage
 Provide the following inputs to the ´marcie.sh´ script with the following order (the order is important but the variable names might differ. You could also provide the paths to these 
 files as command line arguments to the script without assigning them to variables beforehand):
 
 Example:
-`genome=example_genome.fasta`
-`READS_DIR=/home/user/reads`
-`SPECIES=species_sp`
-`THREADS=10`
-`#threshold for filtering out low quality mappings`
-`MQ=10`
-`#run pipeline`
-`./marcie.sh $genome $READS_DIR $SPECIES $THREADS $MQ`
+```
+#set variables
+genome=example_genome.fasta
+READS_DIR=/home/user/reads
+SPECIES=species_sp
+THREADS=10
+#threshold for filtering out low quality mappings
+MQ=10
+
+#run pipeline
+./marcie.sh $genome $READS_DIR $SPECIES $THREADS $MQ
+```
 
 The species name variable is important as it will be the prefix of all your output files.
 
