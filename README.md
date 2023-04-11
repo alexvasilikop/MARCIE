@@ -25,15 +25,17 @@ The script requires that all above software dependencies are on the path and per
 The easiest way to run the pipeline is to generate a conda environment, install all dependencies there and 
 run the pipeline while the environment is activated.
 
-`#create and activate env<\n>
-conda create -n mapping_varcall_genotype<\n>
+```
+#create and activate env
+conda create -n mapping_varcall_genotype
 conda activate mapping_varcall_genotype
 #install requirements
 conda install -c bioconda sambamba
 conda install -c bioconda samtools
 conda install -c bioconda picard
 conda install -c bioconda bwa
-conda install -c bioconda gatk`
+conda install -c bioconda gatk
+```
 
 ## Formatting of input files
 The script takes as input a list of paired-end Illumina files representing different samples or libraries (e.g., see below `sample_1`, `sample_2`) and a genome assembly file in fasta 
