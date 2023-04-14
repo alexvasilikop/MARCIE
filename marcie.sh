@@ -148,7 +148,7 @@ cat list_of_SeqIDs.txt| while read SeqID;do
         samtools faidx $genome
 
         #Call short germline variants (SNPs and indels) using HaplotypeCaller
-        echo -e "\n### SNP-Calling with GATK (4.2.6.1)\ngenome:\t$genome\nbam file:\t$input"
+        echo -e "\n### SNP-Calling with GATK \ngenome:\t$genome\nbam file:\t$input"
         time gatk HaplotypeCaller -R $genome -I $input -ERC GVCF -O $input.g.vcf
     fi
 done
