@@ -75,6 +75,7 @@ MQ=10
 #run pipeline
 ./marcie.sh $genome $READS_DIR $SPECIES $THREADS $MQ
 ```
-Important: The genome fasta file should have the suffix ".fasta"
+Important: The genome fasta file should have the suffix ".fasta".
+
 The species name variable is important as it will be the prefix of your output files.
 
