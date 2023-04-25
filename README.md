@@ -1,9 +1,9 @@
 # MARCIE (Mapping, vARiant Calling and genotyping pIpEline)
 
 ## Introduction
-This is a simple pipeline written in Bash shell for performing reads mapping (Illumina paired-end reads) on a reference genome 
+This is a simple pipeline written in Bash for performing reads' mapping (Illumina paired-end reads) on a reference genome 
 and subsequent filtering of BAM alignment files, short germline variant calling and combined genotyping of several 
-samples (using GATK). The pipeline has been tested using GATK v. 4.2.6.1 in a conda environment (see below).
+samples (using GATK). The pipeline has been tested using GATK v. 4.2.6.1 installed within a conda environment (see below).
 
 Specifically the steps are the following:
 1. Check for software dependencies
