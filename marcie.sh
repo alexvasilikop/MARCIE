@@ -86,18 +86,19 @@ cat list_of_SeqIDs.txt| while read SeqID;do
         bwa mem -t $threads -M -R $RGstring $genome $READS_DIR/$FILE1 $READS_DIR/$FILE2 -o $mappingID.sam
 
         #Post-treating mapping files (SAM->BAM, sort, filter, mark duplicates)
-        echo -e "\n### Post-treating mapping files\nmappingID:\t$mappingID\nSAM->BAM and sorting..:\n"
+        echo -e "\n### Post-treating mapping files\nmappingID:\t$mappingID\nSAM->BAM and sorting...\n"
         sambamba view -t $threads -f bam -h -S -o $mappingID.bam $mappingID.sam
 
         echo -e "\n### Deleting SAM file ...###\n"
         rm -f $mappingID.sam
-
+	
+	echo -e "\n### Sorting BAM file ...###\n"
         sambamba sort -t $threads --tmpdir=./ $mappingID.bam -o $mappingID.sorted.bam
         echo -e "\n### Deleting unsorted BAM file ...###\n"
         rm -f $mappingID.bam
 
         #filter reads with mapping quality <10
-        echo -e "\n### Post-treating mapping files\nmappingID:\t$mappingID\nMinimal Mapping Quality:\t$MQ"
+        echo -e "\n### Filtering reads with mapping quality < 10\nmappingID:\t$mappingID\nMinimal Mapping Quality:\t$MQ"
         sambamba view -t $threads -f bam -h -F "mapping_quality >= 10" $mappingID.sorted.bam -o $mappingID.sorted.MQ$MQ.bam
 
         #mark duplicates (necessary for variant calling)
@@ -105,12 +106,12 @@ cat list_of_SeqIDs.txt| while read SeqID;do
         time picard MarkDuplicates -I $mappingID.sorted.MQ$MQ.bam -O $mappingID.sorted.MQ$MQ.mdup.bam -M marked_dup_metrics.$mappingID.sorted.MQ$MQ.txt
 
         #remove temporary files
-        echo -e "\n### Deleting filtered BAM file (before quality-based filtering) ...###\n"
+        echo -e "\n### Remove temporary files (Deleting sorted filtered BAM file before quality-based filtering step) ...###\n"
         rm -f $mappingID.sorted.MQ$MQ.bam
         rm -f $mappingID.sorted.MQ$MQ.bam.bai
 
         #index final bam file
-        echo -e "\n### Index mapping file\nmappingID:\t$mappingID:\n"
+        echo -e "\n### Index mapping file (BAM file) \nmappingID:\t$mappingID:\n"
         sambamba index -t $threads $mappingID.sorted.MQ$MQ.mdup.bam
     fi
 done
