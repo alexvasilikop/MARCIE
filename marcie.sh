@@ -118,8 +118,8 @@ done
 
 
 ###############################
-#Variant caling (step 2)
-echo -e "\n### Step 2: Variant calling with HaplotypeCaller... ##\n"
+#Variant calling (step 2)
+echo -e "\n### Step 2: Short germline variant calling with HaplotypeCaller... ##\n"
 #####################################################################
 
 cat list_of_SeqIDs.txt| while read SeqID;do
