@@ -8,7 +8,7 @@ samples (using GATK). The pipeline has been tested using GATK v. 4.2.6.1 install
 Specifically the steps are the following:
 1. Check for software dependencies
 2. Run mapping of all libraries using the BWA mem algorithm in paired-end mode
-3. Converting, sorting and filtering of BAM files according to provided threshold for mapping quality (MQ) - each library is processed searately after each mapping is finished
+3. Converting, sorting and filtering of BAM files according to provided threshold for mapping quality (MQ) - each library is processed separately after each mapping is finished
 4. Marking duplicates with Picard
 5. Short germline variant calling with HaplotypeCaller (GATK toolkit)
 6. Combining the GVCF files (CombineGVCFs)
