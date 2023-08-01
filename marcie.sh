@@ -109,6 +109,8 @@ cat list_of_SeqIDs.txt| while read SeqID;do
         echo -e "\n### Remove temporary files (Deleting sorted filtered BAM file before quality-based filtering step) ...###\n"
         rm -f $mappingID.sorted.MQ$MQ.bam
         rm -f $mappingID.sorted.MQ$MQ.bam.bai
+	rm -f $mappingID.sorted.bam
+ 	rm -f $mappingID.sorted.bam.bai
 
         #index final bam file
         echo -e "\n### Index mapping file (BAM file) \nmappingID:\t$mappingID:\n"
