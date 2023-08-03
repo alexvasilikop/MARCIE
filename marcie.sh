@@ -99,7 +99,7 @@ cat list_of_SeqIDs.txt| while read SeqID;do
 
         #filter reads with mapping quality <10
         echo -e "\n### Filtering reads with mapping quality < 10\nmappingID:\t$mappingID\nMinimal Mapping Quality:\t$MQ"
-        sambamba view -t $threads -f bam -h -F "mapping_quality >= 10" $mappingID.sorted.bam -o $mappingID.sorted.MQ$MQ.bam
+        sambamba view -t $threads -f bam -h -F "mapping_quality >= $MQ" $mappingID.sorted.bam -o $mappingID.sorted.MQ$MQ.bam
 
         #mark duplicates (necessary for variant calling)
         echo -e "\n### Mark duplicates with Picard\nmappingID:\t$mappingID\n"
