@@ -7,7 +7,7 @@ set -eo pipefail
 for software in bwa gatk sambamba picard samtools; do
 
     if ! command -v $software &> /dev/null; then
-        echo -e "$software could not be found"
+        echo -e "### $software could not be found ###\n"
         return 127
     else
         echo -e "\n### $software is on path ###\n"
