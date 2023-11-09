@@ -118,7 +118,6 @@ cat list_of_SeqIDs.txt| while read SeqID;do
     fi
 done
 
-
 ###############################
 #Variant calling (step 2)
 echo -e "\n### Step 2: Short germline variant calling with HaplotypeCaller... ##\n"
@@ -156,7 +155,6 @@ cat list_of_SeqIDs.txt| while read SeqID;do
     fi
 done
 
-
 ############################################################
 #STEP 3: COMBINE GVCFS 
 echo -e "\n### Step 3: Combine GVCFs with \"gatk CombineGVCFs\"... ###\n"
@@ -174,7 +172,6 @@ fi
 
 #Combine gvcfs
 time gatk CombineGVCFs -R $genome -V $list_GVCFs -O $combined_gvcfs
-
 
 ###############################################################################
 ## STEP 4: GENOTYPING COMBINED GVCFS - GATK  ##################
