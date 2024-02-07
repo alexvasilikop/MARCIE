@@ -55,7 +55,7 @@ cat list_of_SeqIDs.txt| while read SeqID;do
     mappingID=$(sed -e "s/.fasta//" <<< $genome).$SeqID
 	
     #check if mapping files with marked duplicates already exist
-	if [[ -f $mappingID.sorted.MQ$MQ.mdup.bam ]];then
+    if [[ -f $mappingID.sorted.MQ$MQ.mdup.bam ]];then
         echo -e "### Mapping files for $SeqID exist... ###\n"
         continue
 
